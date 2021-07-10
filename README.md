@@ -13,16 +13,5 @@ Aletheia is the first decentralized inflation oracle
 - version: `paper-napkin`
 
 ### MVP Inflation Feed
-- [ ] aletheia -- orchestrator module
-- [ ] hermes -- scraping module
-- [ ] hephaestus -- computation module
-- [ ] nemesis -- proof module
-- [ ] zephyrus -- p2p module (for [bitclout](https://bitclout.com))
-- [ ] lethe -- archive module
-- [ ] aether -- Ethereum blockchain interface module
-- [ ] eunomia -- identity module
 
-### Decentralized Oracle
-TBD
-### Inflation-Adjusted DeFi
-TBD
+See [projects/mvp](https://github.com/aletheia-oracle/aletheia-feed/projects/2)
