@@ -11,5 +11,5 @@ select = "*"
 scraper = "*"
 tokio = { version = "*", features = ["full"] }
 csv = "*"
-
+aletheia_hermes = { path = "../hermes"}
 
