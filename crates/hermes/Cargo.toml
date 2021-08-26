@@ -1,5 +1,5 @@
 [package]
-name = "aletheia-hermes"
+name = "aletheia_hermes"
 version = "0.1.0"
 edition = "2018"
 
@@ -9,7 +9,6 @@ edition = "2018"
 reqwest = "*"
 select = "*"
 scraper = "*"
-tokio = { version = "*", features = ["full"] }
 csv = "*"
 url  = "*"
 

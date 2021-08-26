@@ -1,21 +1,27 @@
 use csv::Writer;
+use reqwest;
 use scraper::Html;
 use scraper::Selector;
 use select::document::Document;
 use select::predicate::{Attr, Class, Name};
 use std::fs::OpenOptions;
-use reqwest;
 use url::Url;
 
-pub struct Parser {
-    client: reqwest::Client
+pub struct Scraper {
+    client: reqwest::Client,
 }
 
-impl Parser {
-    pub fn init_parser(&mut self){
-        self.client = reqwest::Client::new();
+impl Scraper {
+    pub fn new() -> Self {
+        Self {
+            client: reqwest::Client::new(),
+        }
     }
-    pub async fn scrape_website(&self, url: &str, selector: &str) ->  Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    pub async fn scrape_website(
+        &self,
+        url: &str,
+        selector: &str,
+    ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         let url = Url::parse(&url)?;
         let response = self.client.get(url).send().await?.text().await?;
         let document = Html::parse_document(&response);
@@ -24,6 +30,5 @@ impl Parser {
             println!("element: {:?}", element.inner_html())
         }
         Ok(())
-            
     }
 }
